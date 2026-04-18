@@ -1,49 +1,65 @@
-# Real-Time AI Chat App - Technical Test
+# 🚀 Aplicación de Chat con IA en Tiempo Real
 
-A premium real-time chat application built with **Next.js**, **NestJS**, **Firebase**, and **ChatGPT**.
+Una aplicación de chat premium full-stack construida con **Next.js**, **NestJS**, **Firebase** y **OpenAI**. Este proyecto demuestra una arquitectura lista para producción para comunicación en tiempo real y orquestación segura de IA.
 
-## 🚀 Features
-- **Firebase Authentication**: Email/Password login, registration, and password reset.
-- **Real-Time Messaging**: Instant sync using Firebase Firestore.
-- **AI Integration**: Automatic responses from ChatGPT via a secure NestJS backend.
-- **Security**: ID Token validation in the backend via Firebase Admin SDK.
-- **State Management**: Global state handled by Zustand.
-- **Premium UI**: Glassmorphism design, smooth animations, and responsive layout.
+![Vista de Login](./docs/screenshots/screenshot-login.png)
 
-## 📁 Project Structure
-- `/frontend`: Next.js Web App
-- `/backend`: NestJS API Server
+## ✨ Características Principales
 
----
+- **🛡️ Autenticación Segura**: Flujo completo de Registro, Login y Recuperación de contraseña mediante Firebase Auth.
+- **💬 Mensajería en Tiempo Real**: Sincronización instantánea a través de Firebase Firestore con actualizaciones visuales de latencia cero.
+- **🤖 Respuesta Inteligente con IA**: Interacción segura con ChatGPT (vía OpenRouter/OpenAI) mediada por un backend personalizado en NestJS.
+- **🔒 Protección del Backend**: Validación estricta de ID Tokens mediante Firebase Admin SDK para proteger los endpoints de la IA.
+- **🎨 Interfaz Premium**: Estética moderna "Glassmorphism", animaciones fluidas con Framer Motion y diseño totalmente responsivo.
+- **🧠 Estado Global Avanzado**: Gestión de estado predecible utilizando Zustand.
 
-## 🛠️ Setup Instructions
+## 📸 Capturas de Pantalla
 
-### 1. Firebase Setup
-1. Create a project in [Firebase Console](https://console.firebase.google.com/).
-2. Enable **Authentication** (Email/Password).
-3. Create a **Firestore Database** in test mode or with specific rules (see below).
-4. Go to **Project Settings > General** and add a Web App to get your configuration.
-5. Go to **Project Settings > Service Accounts** and click **Generate new private key** to get the JSON for the backend.
+### Dashboard de Inteligencia
+Nuestro backend incluye un panel de telemetría en vivo para monitorear la salud del servicio y los puntos de acceso de la API.
 
-### 2. Backend Configuration
-1. Navigate to `backend/`.
-2. Copy `.env.example` to `.env`.
-3. Fill in your `OPENAI_API_KEY`.
-4. Fill in `FIREBASE_SERVICE_ACCOUNT` with the contents of the JSON file you downloaded.
-5. Run `npm install`.
-6. Start the server: `npm run start:dev`. (Runs on http://localhost:3001)
+![Dashboard del Backend](./docs/screenshots/screenshot-backend.png)
 
-### 3. Frontend Configuration
-1. Navigate to `frontend/`.
-2. Copy `.env.example` to `.env.local`.
-3. Fill in your Firebase Web App configuration.
-4. Run `npm install`.
-5. Start the app: `npm run dev`. (Runs on http://localhost:3000)
+### Experiencia de Conversación
+Flujo de mensajes fluido y una interfaz pulida inspirada en los sistemas de diseño más modernos.
+
+![Interfaz de Chat](./docs/screenshots/screenshot-chat.png)
 
 ---
 
-## 🔒 Firestore Security Rules
-Use these rules for the messages collection:
+## 📁 Estructura del Proyecto
+
+| Directorio | Rol | Stack Tecnológico Principal |
+| :--- | :--- | :--- |
+| [**/frontend**](./frontend) | Aplicación Web Cliente | Next.js, Zustand, Firebase SDK, Framer Motion |
+| [**/backend**](./backend) | Servidor API | NestJS, Firebase Admin, OpenAI SDK |
+
+---
+
+## 🚀 Configuración Rápida
+
+### 1. Requisitos
+- Node.js 18+
+- Proyecto de Firebase (Auth y Firestore habilitados)
+- API Key de OpenAI u OpenRouter
+
+### 2. Puesta en Marcha
+Sigue las guías detalladas en cada directorio:
+- [Documentación del Frontend](./frontend/README.md)
+- [Documentación del Backend](./backend/README.md)
+
+---
+
+## 🎙️ Guía para la Entrevista Técnica
+
+Para un análisis profundo de las decisiones arquitectónicas, las reglas de seguridad y las consideraciones de escalabilidad de este proyecto, por favor consulta:
+
+👉 **[INTERVIEW.md](./INTERVIEW.md)**
+
+---
+
+## 🔒 Reglas de Seguridad de Firebase
+Asegúrate de configurar las reglas de Firestore para proteger la privacidad de los usuarios:
 ```javascript
 rules_version = '2';
 service cloud.firestore {
@@ -56,8 +72,5 @@ service cloud.firestore {
 }
 ```
 
-## 🧠 Architecture Decisions
-- **Backend Writing to Firestore**: Ensure bot responses are persisted securely and synced in real-time without frontend lag.
-- **Zustand Stores**: Clean separation between Auth and Chat logic.
-- **CSS Modules/Vanilla CSS**: Custom premium styling without the overhead of heavy CSS frameworks.
-- **Firebase Admin Guard**: Prevents unauthorized access to AI endpoints.
+---
+*Desarrollado como parte de una Prueba Técnica para Senior Full-Stack Developer.*
