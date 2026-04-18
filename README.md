@@ -2,8 +2,6 @@
 
 Una aplicación de chat premium full-stack construida con **Next.js**, **NestJS**, **Firebase** y **OpenAI**. Este proyecto demuestra una arquitectura lista para producción para comunicación en tiempo real y orquestación segura de IA.
 
-![Vista de Login](./docs/screenshots/screenshot-login.png)
-
 ## ✨ Características Principales
 
 - **🛡️ Autenticación Segura**: Flujo completo de Registro, Login y Recuperación de contraseña mediante Firebase Auth.
@@ -12,18 +10,6 @@ Una aplicación de chat premium full-stack construida con **Next.js**, **NestJS*
 - **🔒 Protección del Backend**: Validación estricta de ID Tokens mediante Firebase Admin SDK para proteger los endpoints de la IA.
 - **🎨 Interfaz Premium**: Estética moderna "Glassmorphism", animaciones fluidas con Framer Motion y diseño totalmente responsivo.
 - **🧠 Estado Global Avanzado**: Gestión de estado predecible utilizando Zustand.
-
-## 📸 Capturas de Pantalla
-
-### Dashboard de Inteligencia
-Nuestro backend incluye un panel de telemetría en vivo para monitorear la salud del servicio y los puntos de acceso de la API.
-
-![Dashboard del Backend](./docs/screenshots/screenshot-backend.png)
-
-### Experiencia de Conversación
-Flujo de mensajes fluido y una interfaz pulida inspirada en los sistemas de diseño más modernos.
-
-![Interfaz de Chat](./docs/screenshots/screenshot-chat.png)
 
 ---
 
@@ -47,14 +33,6 @@ Flujo de mensajes fluido y una interfaz pulida inspirada en los sistemas de dise
 Sigue las guías detalladas en cada directorio:
 - [Documentación del Frontend](./frontend/README.md)
 - [Documentación del Backend](./backend/README.md)
-
----
-
-## 🎙️ Guía para la Entrevista Técnica
-
-Para un análisis profundo de las decisiones arquitectónicas, las reglas de seguridad y las consideraciones de escalabilidad de este proyecto, por favor consulta:
-
-👉 **[INTERVIEW.md](./INTERVIEW.md)**
 
 ---
 
